@@ -77,7 +77,11 @@
 
 <div class="flex min-h-screen flex-col items-center bg-gray-100 p-6">
 	<Card class="w-full max-w-md bg-white p-6 shadow-lg">
-		<h1 class="mb-4 text-center text-2xl font-bold">NIM Game</h1>
+		<h1 class="mb-2 text-center text-2xl font-bold">NIM Game</h1>
+		<p class="mb-4 text-center text-sm text-gray-600">
+			NIM is a strategy game where players take 1, 2, or 3 rocks per turn. The goal is to force your
+			opponent to take the last rock. Can you beat the computer?
+		</p>
 		<p class="mb-6 text-center">{message}</p>
 
 		{#if !gameStarted}
@@ -86,7 +90,7 @@
 				<Button onclick={() => startGame('computer')} class="bg-green-500">Computer Starts</Button>
 			</div>
 		{:else if !gameOver}
-			<div class="flex justify-center gap-2">
+			<div class="flex flex-wrap justify-center gap-2 gap-y-2">
 				<Button
 					onclick={() => playerTurn(1)}
 					disabled={message.includes('Computer') ||
@@ -138,4 +142,6 @@
 			{/each}
 		</div>
 	</Card>
+
+	<footer class="mt-8 text-sm text-gray-500">MARS - 2024</footer>
 </div>
